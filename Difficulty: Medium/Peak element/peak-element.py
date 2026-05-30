@@ -1,0 +1,16 @@
+class Solution:   
+    def peakElement(self, arr):
+        # Code here
+        n = len(arr)
+        
+        for i in range(n):
+            left = True
+            right = True
+            
+            if i > 0 and arr[i] <= arr[i - 1]:
+                left = False
+            if i < n - 1 and arr[i] <= arr[i + 1]:
+                right = False
+            
+            if left and right:
+                return i
